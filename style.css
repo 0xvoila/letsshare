@@ -1,0 +1,19 @@
+.deal-title {
+	font-size: 18px;
+	padding: 10px; 
+}	
+
+.deal-description {
+	font-size: 12px;
+}
+
+.deal-coupon {
+	padding: 10px; 
+}
+.deal-poster-image {
+	padding: 37px;
+}
+
+.deal {
+	padding-bottom: 20px;
+}
