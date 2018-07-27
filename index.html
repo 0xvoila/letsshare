@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -69,7 +70,7 @@
         <!-- This is for showing Verified -->
         <div class="row">
           <div class="col-sm-4 deal-verification">
-            <span class="badge">Verified Deal</span>
+            <button type="button" class="btn-xs btn-success">verified</button>
           </div>
         </div>
         <!-- This is to show title and Code and share a deal button-->
@@ -88,9 +89,20 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-8 deal-comments">
-            Here comments will come 
-          </div>
+          <div class="col-md-8">
+                  <div class="panel-body">
+                      <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
+                      <form class="form-inline">
+                          <div class="btn-group">
+                              <button class="btn" type="button"><span class="fa fa-picture-o fa-lg"></span></button>
+                              <button class="btn" type="button"><span class="fa fa-video-camera fa-lg"></span></button>
+                              <button class="btn" type="button"><span class="fa fa-microphone fa-lg"></span></button>
+                              <button class="btn" type="button"><span class="fa fa-music fa-lg"></span></button>
+                          </div>
+                          <button class="btn btn-primary pull-right" type="button">Share</button>
+                      </form>
+                  </div>
+            </div>
         </div>
       </div>
   </div>
@@ -108,7 +120,7 @@
         <!-- This is for showing Verified -->
         <div class="row">
           <div class="col-sm-4 deal-verification">
-            <span class="badge">Verified Deal</span>
+            <button type="button" class="btn-xs btn-success">verified</button>
           </div>
         </div>
         <!-- This is to show title and Code and share a deal button-->
@@ -126,10 +138,21 @@
             I just got a great deal from Make my trip. I booked fligths from bangalore to Goa and got 500 INR off
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-8 deal-comments">
-            Here comments will come 
-          </div>
+          <div class="row">
+            <div class="col-md-8">
+                  <div class="panel-body">
+                      <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
+                      <form class="form-inline">
+                          <div class="btn-group">
+                              <button class="btn" type="button"><span class="fa fa-picture-o fa-lg"></span></button>
+                              <button class="btn" type="button"><span class="fa fa-video-camera fa-lg"></span></button>
+                              <button class="btn" type="button"><span class="fa fa-microphone fa-lg"></span></button>
+                              <button class="btn" type="button"><span class="fa fa-music fa-lg"></span></button>
+                          </div>
+                          <button class="btn btn-primary pull-right" type="button">Share</button>
+                      </form>
+                  </div>
+            </div>
         </div>
       </div>
   </div>
@@ -146,8 +169,8 @@
       <div class="col-sm-6">
         <!-- This is for showing Verified -->
         <div class="row">
-          <div class="col-sm-4 deal-verification">
-            <span class="badge">Verified Deal</span>
+          <div class="col-sm-4 deal-verification ">
+            <button type="button" class="btn-xs btn-success">verified</button>
           </div>
         </div>
         <!-- This is to show title and Code and share a deal button-->
@@ -165,10 +188,22 @@
             I just got a great deal from Make my trip. I booked fligths from bangalore to Goa and got 500 INR off
           </div>
         </div>
+        <div class="row deal-comment">
+          This is a new comment
+        </div>
         <div class="row">
-          <div class="col-sm-8 deal-comments">
-            Here comments will come 
-          </div>
+          <div class="col-md-8">
+                  <textarea placeholder="Write your comment here!"></textarea>
+                  <form class="form-inline">
+                      <div class="btn-group">
+                          <button class="btn" type="button"><span class="fa fa-picture-o fa-lg"></span></button>
+                          <button class="btn" type="button"><span class="fa fa-video-camera fa-lg"></span></button>
+                          <button class="btn" type="button"><span class="fa fa-microphone fa-lg"></span></button>
+                          <button class="btn" type="button"><span class="fa fa-music fa-lg"></span></button>
+                      </div>
+                      <button class="btn btn-primary pull-right" type="button">Share</button>
+                  </form>
+            </div>
         </div>
       </div>
   </div>
