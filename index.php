@@ -49,6 +49,15 @@
         </div>
     </div>
   </div>
+  <br>
+
+  <div class="row">
+    <div class="col-sm-5">
+    </div>
+    <div class="col-sm-2">
+      <input type="button" class="btn btn-info" id="deal-search-box-submit-btn" name="deal-search-submit-btn" value="Search Deals">
+    </div>
+  </div>
 </div>
 
 
@@ -56,11 +65,13 @@
 <br>
 <br>
 
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#">Deals</a></li>
+  </ul>
+</div>
 <!-- This is for deals section -->
 <div class="container" id="deal-container">
-  
-
-  
 </div>
 </body>
 </html>
