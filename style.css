@@ -23,15 +23,11 @@
 	padding: 10px;
 }
 
-.pb-cmnt-container {
-        font-family: Lato;
-        margin-top: 100px;
- }
- 
-.pb-cmnt-textarea {
-    resize: none;
-    padding: 20px;
-    height: 130px;
-    width: 100%;
-    border: 1px solid #F2F2F2;
+@media screen and (max-width:768px){
+	body {
+		text-align: center;	
+	}
+	.deal-poster-image {
+		display: none;
+	}
 }
