@@ -32,7 +32,6 @@
 	    $last_id = $conn->insert_id;
 	    
 	    $makeSearchable = array(array('db_id' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title));
-	    print_r($makeSearchable);
 		$index->addObjects($makeSearchable,true);
 
 	} else {
