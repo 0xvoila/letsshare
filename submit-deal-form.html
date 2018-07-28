@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Deals & Discount Community</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div id="submit-deal-form">
+  <form class="form-horizontal" method="post"  action="/submit-deal-form.php">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Coupon:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="deal-coupon" name="deal-coupon" placeholder="Enter coupon">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Deal Title:</label>
+      <div class="col-sm-6"> 
+        <input type="text" class="form-control" id="deal-title" name="deal-title" placeholder="Enter Deal Title">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Deal Description:</label>
+      <div class="col-sm-6"> 
+        <input type="text" class="form-control" id="deal-description" name="deal-description" placeholder="Deal Description">
+      </div>
+    </div>
+
+    <div class="form-group"> 
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox"> Remember me</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group"> 
+      <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" class="btn btn-default" name="Submit">
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
