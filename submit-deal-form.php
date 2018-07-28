@@ -20,13 +20,10 @@
 	$deal_title = $_POST['deal-title'];
 	$deal_description = $_POST['deal-description'];
 
-	$string = "INSERT INTO deals (deal_title, deal_description, deal_coupon,is_approved) VALUES" . "('".$deal_title . "'," . "'" . $deal_description . "'," . "'" . $deal_coupon . "'," . "'" . 'N' . "');";
-	echo $string;
-
 	$sql = "INSERT INTO deals (deal_title, deal_description, deal_coupon,is_approved) VALUES" . "('".$deal_title . "'," . "'" . $deal_description . "'," . "'" . $deal_coupon . "'," . "'" . 'N' . "');";
 
 	if ($conn->query($sql) === TRUE) {
-	    echo "New record created successfully";
+	    echo "Thank you for contribution. You deal is submitted for verification";
 	} else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
