@@ -22,7 +22,7 @@
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li class="active"><a href="submit-deal-form.html">Submit Coupon</li>
+        <li class="active"><a href="/submit-deal-form.html">Submit Coupon</a></li>
       </ul>
     </div>
   </nav>
@@ -45,18 +45,9 @@
     </div>
     <div class="col-sm-6">
       <!-- Search form -->
-
-    <form class="form-horizontal" method="post"  action="">
-    <div class="form-group">
-      <div class="col-sm-">
-        <input type="text" class="form-control" id="deal-search" name="deal-search" placeholder="search a deal and press enter">
-      </div>
-      <div class="form-group">
-      <div class="col-sm-6">
-        <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
-      </div>
-    </div>
-  </form>
+        <div class="form-group">
+            <input type="text" class="form-control" id="deal-search" name="deal-search" placeholder="search a deal and press enter">
+        </div>
     </div>
   </div>
 </div>
@@ -69,7 +60,7 @@
 <!-- This is for deals section -->
 <div class="container">
   
-  <?php
+<?php
   
   $servername = "localhost";
   $username = "root";
@@ -132,7 +123,7 @@
         <div class="clearfix"></div>';
     } // while deal close
   }
-  ?>
+?>
   
 </div>
 </body>
