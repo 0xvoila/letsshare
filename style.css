@@ -1,7 +1,30 @@
+body {
+  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Roboto', Tahoma, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
 .deal-title {
 	font-size: 18px;
 	padding: 10px; 
 }	
+
+#deal-search-box {
+	
+	-webkit-transition: all 0.30s ease-in-out;
+  	-moz-transition: all 0.30s ease-in-out;
+  	-ms-transition: all 0.30s ease-in-out;
+  	-o-transition: all 0.30s ease-in-out;
+
+    padding:0px 15px;
+    border: 3px solid rgba(81, 203, 238, 1);
+    height: 50px;
+}
 
 .deal-description {
 	font-size: 12px;

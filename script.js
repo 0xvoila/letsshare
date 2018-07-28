@@ -14,13 +14,13 @@ $( document ).ready(function() {
 
 	searchDeal('*');
 
-	$('#deal-search').keyup(function(event){
+	$('#deal-search-box').keyup(function(event){
 		var keycode = (event.keyCode ? event.keyCode : event.which);
     	if(keycode == '13'){
-        	searchDeal($('#deal-search').val());
+        	searchDeal($('#deal-search-box').val());
     	}
 
-    	if($('#deal-search').val() == ''){
+    	if($('#deal-search-box').val() == ''){
     		searchDeal('*');	
     	}
 	});

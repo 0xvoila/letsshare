@@ -35,7 +35,7 @@
     </div>
       <div class="col-sm-6">
         <div>
-          <h1>Welcome to Deals Community </h1>
+          <h3 style="text-align:center">Welcome to Deals Community </h3>
           <h6 style="text-align:center">Stop wasting your time on expired deals - join the community now</h6>
         </div>
       </div>
@@ -45,8 +45,8 @@
     </div>
     <div class="col-sm-6">
       <!-- Search form -->
-        <div class="form-group">
-            <input type="text" class="form-control" id="deal-search" name="deal-search" placeholder="search a deal and press enter">
+        <div>
+            <input type="text" class="form-control" id="deal-search-box" name="deal-search" placeholder="search a deal and press enter">
         </div>
     </div>
   </div>
