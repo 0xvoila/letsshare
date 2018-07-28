@@ -21,8 +21,7 @@
         <a class="navbar-brand" href="#">Letshare</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="active"><a href="/submit-deal-form.html">Submit Coupon</a></li>
+        <li class="active"><a href="/submit-deal-form.html">Submit Deal</a></li>
       </ul>
     </div>
   </nav>
@@ -35,7 +34,7 @@
     </div>
       <div class="col-sm-6">
         <div>
-          <h3 style="text-align:center">Welcome to Deals Community </h3>
+          <h3 style="text-align:center">Welcome to Deals Community</h3>
           <h6 style="text-align:center">Stop wasting your time on expired deals - join the community now</h6>
         </div>
       </div>
@@ -46,7 +45,7 @@
     <div class="col-sm-6">
       <!-- Search form -->
         <div>
-            <input type="text" class="form-control" id="deal-search-box" name="deal-search" placeholder="search a deal and press enter">
+            <input type="text" class="form-control" id="deal-search-box" name="deal-search" placeholder="Search a deal and press enter">
         </div>
     </div>
   </div>
