@@ -21,7 +21,7 @@
         <a class="navbar-brand" href="#">Letshare</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/submit-deal-form.html">Submit Deal</a></li>
+        <li class="active"><a href="/submit-deal-form.html">Submit a Deal</a></li>
       </ul>
     </div>
   </nav>
