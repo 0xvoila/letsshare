@@ -58,72 +58,9 @@
 <br>
 
 <!-- This is for deals section -->
-<div class="container">
+<div class="container" id="deal-container">
   
-<?php
-  
-  $servername = "localhost";
-  $username = "root";
-  $password = "root";
-  $dbname = "letshare";
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-      echo "connection issue";
-      die("Connection failed: " . $conn->connect_error);
-  } 
-
-  $fetch_deals = "select * from deals where is_approved='N'";
-  $result = $conn->query($fetch_deals);
-  if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo 
-   
-        '<!-- A row is a deal -->
-        <div class="row deal" >
-          <!-- This is  pic of the poster -->
-            <div class="col-sm-2 deal-poster-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRErG00hM7WDheP9FCZvZTIWGurbuKLDCAoHAmKKemK2s6vsLjA" width="100%" height="100%">
-            </div>
-
-            <!-- This is deal portion -->
-            <div class="col-sm-6">
-              <!-- This is for showing Verified -->
-              <div class="row">
-                <div class="col-sm-4 deal-verification">
-                  <button type="button" class="btn-xs btn-success">verified</button>
-                </div>
-              </div>
-              <!-- This is to show title and Code and share a deal button-->
-              <div class="row">
-                <div class="col-sm-8 deal-title">'.
-                  '<a href="#">'. $row['deal_title'].'</a>
-                </div>
-                <div class="col-sm-2 deal-coupon">
-                  <span >' . $row['deal_coupon'] . '</span>
-                </div>
-              </div>
-              <!-- This is to show description -->
-              <div class="row">
-                <div class="col-sm-8 deal-description">' .
-                  $row['deal_description']
-                .'</div>
-              </div>
-              <div class="row">
-                <div class="col-md-8">
-                        <!-- Here comments section will come -->
-                  </div>
-              </div>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>';
-    } // while deal close
-  }
-?>
   
 </div>
 </body>
