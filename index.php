@@ -99,8 +99,8 @@
                 <div class="col-sm-8 deal-title">'.
                   '<a href="#">'. $row['deal_title'].'</a>
                 </div>
-                <div class="col-sm-4 deal-coupon">
-                  <span class="badge">' . $row['deal_coupon'] . '</span>
+                <div class="col-sm-2 deal-coupon">
+                  <span >' . $row['deal_coupon'] . '</span>
                 </div>
               </div>
               <!-- This is to show description -->
