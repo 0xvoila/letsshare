@@ -3,6 +3,11 @@
 
 <?php
 	
+	require_once('algoliasearch.php');
+
+	$client = new \AlgoliaSearch\Client('WEQ1ZSOQ0G', '385f901dcaf5f9c89672ba880f4b5eab');
+
+	$index = $client->initIndex('deal_search');
 	$servername = "localhost";
 	$username = "root";
 	$password = "root";
@@ -24,6 +29,12 @@
 
 	if ($conn->query($sql) === TRUE) {
 	    echo "Thank you for contribution. You deal is submitted for verification";
+	    $last_id = $conn->insert_id;
+	    
+	    $makeSearchable = array(array('db_id' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title));
+	    print_r($makeSearchable);
+		$index->addObjects($makeSearchable,true);
+
 	} else {
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
