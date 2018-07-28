@@ -9,12 +9,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 </head>
 <body>
 
 <!-- This is for header -->
 <div class="container site-header">
-  <nav class="navbar">
+  <nav class="navbar">  
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Letshare</a>
@@ -34,17 +35,28 @@
     </div>
       <div class="col-sm-6">
         <div>
-          <h1>Welcome to deal community</h1>
-          <h6 style="text-align:center">Stop wasting your time, join the community now</h6>
+          <h1>Welcome to Deals Community </h1>
+          <h6 style="text-align:center">Stop wasting your time on expired deals - join the community now</h6>
         </div>
       </div>
   </div>
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-3">
     </div>
     <div class="col-sm-6">
       <!-- Search form -->
-    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+
+    <form class="form-horizontal" method="post"  action="">
+    <div class="form-group">
+      <div class="col-sm-">
+        <input type="text" class="form-control" id="deal-search" name="deal-search" placeholder="search a deal and press enter">
+      </div>
+      <div class="form-group">
+      <div class="col-sm-6">
+        <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+      </div>
+    </div>
+  </form>
     </div>
   </div>
 </div>
