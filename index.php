@@ -7,9 +7,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="script.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/jquery-comments.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <script type="text/javascript" src="js/jquery-comments.js"></script>
 </head>
 <body>
 
@@ -74,5 +78,11 @@
 <div class="container" id="deal-container">
 <!--Here deal will come from javascript-->
 </div>
+<div class="row">
+    <div class="col-sm-6">
+        
+    </div>
+</div>
 </body>
+<script src="script.js"></script>
 </html>
