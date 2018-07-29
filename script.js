@@ -38,9 +38,9 @@ $( document ).ready(function() {
             getComments: function(success, error) {
                 var commentsArray = [{
                     id: 1,
-                    created: '2015-10-01',
-                    content: 'Lorem ipsum dolort sit amet',
-                    fullname: 'Simon Powell',
+                    created: '2018-07-27',
+                    content: 'This deal works for me. Thanks',
+                    fullname: 'Ranjna Jha',
                     upvote_count: 2,
                     user_has_upvoted: false,
                     profile_picture_url:'http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png'
