@@ -30,10 +30,7 @@ body {
 	font-size: 12px;
 }
 
-.deal-coupon {
-	padding: 10px 10px 10px 20px; 
-	background: #ccc;
-}
+
 
 .deal-poster-image {
 	padding: 37px;
@@ -60,8 +57,22 @@ body {
 	.deal-poster-image {
 		display: none;
 	}
+    
+    .deal-coupon {
+        margin-left:80px;
+        margin-right:80px;
+    }
+    
+    .deal-coupon-code {
+        background-color: #ccc;
+    }
 }
 
+@media screen and (min-width:769px)
+.deal-coupon {
+	padding: 10px 10px 10px 20px; 
+	background: #ccc;
+}
 
 /*This is for deal loader*/
 .loader {

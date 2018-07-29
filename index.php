@@ -23,7 +23,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/submit-deal-form.html">Submit a Deal</a></li>
       </ul>
-    </div>
+    </div>  
   </nav>
 </div>
 
@@ -72,6 +72,7 @@
 </div>
 <!-- This is for deals section -->
 <div class="container" id="deal-container">
+<!--Here deal will come from javascript-->
 </div>
 </body>
 </html>
