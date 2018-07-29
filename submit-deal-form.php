@@ -24,14 +24,15 @@
 	$deal_coupon = $_POST['deal-coupon'];
 	$deal_title = $_POST['deal-title'];
 	$deal_description = $_POST['deal-description'];
-
-	$sql = "INSERT INTO deals (deal_title, deal_description, deal_coupon,is_approved) VALUES" . "('".$deal_title . "'," . "'" . $deal_description . "'," . "'" . $deal_coupon . "'," . "'" . 'N' . "');";
+    $deal_url = $_POST['deal-url'];
+    
+	$sql = "INSERT INTO deals (deal_title, deal_description, deal_coupon,deal_url,is_approved) VALUES" . "('".$deal_title . "'," . "'" . $deal_description . "'," . "'" . $deal_coupon . "'," . "'" . $deal_url . "'," . "'" . 'N' . "');";
 
 	if ($conn->query($sql) === TRUE) {
 	    echo "Thank you for contribution. You deal is submitted for verification";
 	    $last_id = $conn->insert_id;
 	    
-	    $makeSearchable = array(array('db_id' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title));
+	    $makeSearchable = array(array('db_id' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url));
 		$index->addObjects($makeSearchable,true);
 
 	} else {
