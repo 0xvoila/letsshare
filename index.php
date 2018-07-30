@@ -22,7 +22,7 @@
   <nav class="navbar">  
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">Letshare</a>
+        <a class="navbar-brand" href="/">DealsbyCommunity</a>
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="/submit-deal-form.html">Submit a Deal</a></li>
@@ -38,7 +38,7 @@
     </div>
       <div class="col-sm-6">
         <div>
-          <h3 style="text-align:center">Welcome to Deals Community</h3>
+          <h3 style="text-align:center">Welcome to Deals By Community</h3>
           <h6 style="text-align:center">Stop wasting your time on expired deals - join the community now</h6>
         </div>
       </div>

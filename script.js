@@ -44,6 +44,15 @@ $( document ).ready(function() {
                     upvote_count: 2,
                     user_has_upvoted: false,
                     profile_picture_url:'http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png'
+                },{
+                    id: 2,
+                    parent:1,
+                    created: '2018-07-27',
+                    content: 'This deal works for me. Thanks',
+                    fullname: 'Ranjna Jha',
+                    upvote_count: 2,
+                    user_has_upvoted: false,
+                    profile_picture_url:'http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png'
                 }];
                     success(commentsArray);
                 }
