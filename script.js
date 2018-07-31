@@ -6,22 +6,22 @@ $( document ).ready(function() {
 	var index = client.initIndex('deal_search');
 	index.setSettings({
 	  	searchableAttributes: ['deal_title,deal_description',
-                              'deal_url']
+                              'deal_url','deal_support_search']
 	});
 
 	index.setSettings({
 	  attributesToRetrieve: ['*']
 	});
 
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-                name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));  
-        }
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));  
+    }
     
     var query = getParameterByName('q');
     if(query)
