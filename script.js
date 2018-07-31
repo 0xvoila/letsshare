@@ -23,7 +23,7 @@ $( document ).ready(function() {
             return decodeURIComponent(results[2].replace(/\+/g, ' '));  
         }
     
-    var query = getParameterByName('query');
+    var query = getParameterByName('q');
     if(query)
         searchDeal(query);   
     else 
