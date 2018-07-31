@@ -27,7 +27,7 @@ $( document ).ready(function() {
     if(query)
         searchDeal(query);   
     else 
-        serachDeal('*');
+        searchDeal('*');
     
     
     
