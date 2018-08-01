@@ -6,7 +6,7 @@ $( document ).ready(function() {
 	var index = client.initIndex('deal_search');
 	index.setSettings({
 	  	searchableAttributes: ['deal_title,deal_description',
-                              'deal_url','deal_support_search']
+                              'deal_url','deal_support_search','comments']
 	});
 
 	index.setSettings({
@@ -42,8 +42,8 @@ $( document ).ready(function() {
             getComments: function(success, error) {
                 $.ajax({
                     type: 'get',
-                    headers: {"X-Algolia-API-Key": "385f901dcaf5f9c89672ba880f4b5eab", "X-Algolia-Application-Id" :"WEQ1ZSOQ0G" },
-                    url: 'https://WEQ1ZSOQ0G.algolia.net/1/indexes/deal_search/' + 481590640,
+                    headers: {"X-Algolia-API-Key": "7b0cab452409affbc3e9cdd8dd6260e1", "X-Algolia-Application-Id" :"WEQ1ZSOQ0G" },
+                    url: 'https://WEQ1ZSOQ0G.algolia.net/1/indexes/deal_search/' + 481590640 + '?attributes=*',
                     success: function(dealObject) {
                         success(dealObject.comments)
                     },
