@@ -86,7 +86,7 @@
     </div>
       <div class="col-sm-6">
         <div>
-          <h3 style="text-align:center">Search Deals|Coupons|Offers</h3>
+          <h1 style="text-align:center">Offers & Discount By Community</h1>
           <h6 style="text-align:center">Stop wasting your time on expired deals - join the community now</h6>
         </div>
       </div>
@@ -100,14 +100,14 @@
             <input type="text" class="form-control" id="deal-search-box" name="deal-search" placeholder="Search a deal and press enter">
         </div>
     </div>
+     <div class="col-sm-2">
+      <input type="button" class="btn btn-info" id="deal-search-box-submit-btn" name="deal-search-submit-btn" value="Search Deals">
+    </div>
   </div>
   <br>
 
   <div class="row">
     <div class="col-sm-5">
-    </div>
-    <div class="col-sm-2">
-      <input type="button" class="btn btn-info" id="deal-search-box-submit-btn" name="deal-search-submit-btn" value="Search Deals">
     </div>
   </div>
 </div>
@@ -135,7 +135,7 @@
                             echo '<br>';
                             $count = $count + 1;
                         }
-                        echo '<!-- A row is a deal --><div class="row deal" ><!-- This is  pic of the poster -->  <div class="col-sm-2 deal-poster-image">      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRErG00hM7WDheP9FCZvZTIWGurbuKLDCAoHAmKKemK2s6vsLjA" width="100%" height="100%">  </div><!-- This is deal portion -->  <div class="col-sm-10">    <!-- This is for showing Verified -->    <div class="row">      <div class="col-sm-4 deal-verification">        <button type="button" class="btn-xs btn-success">verified</button>      </div>    </div>    <!-- This is to show title and Code and share a deal button-->    <div class="row">      <div class="col-sm-8 deal-title">' .        '<h3><a href="#">'. $deal["deal_title"] .'</a></h3>      </div>      <div class="col-sm-2 deal-coupon">        <span class="deal-coupon-code">' . $deal["deal_coupon"] . '</span>      </div>    </div>    <!-- This is to show description --> <div class="row"><div class="col-sm-8">' . '<a href="' . $deal["deal_url"] . '">' . $deal["deal_url"] . '</a>' . '</div></div>   <div class="row">      <div class="col-sm-8 deal-description">' .       $deal["deal_description"]    . '</div>    </div><br><br>    <div class="row">      <div class="col-md-8"> <div id="comments-container"> </div></div>  </div>       </div>    </div>  </div></div><hr>';
+                        echo '<!-- A row is a deal --><div class="row deal" ><!-- This is  pic of the poster -->  <div class="col-sm-2 deal-poster-image">      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRErG00hM7WDheP9FCZvZTIWGurbuKLDCAoHAmKKemK2s6vsLjA" width="100%" height="100%">  </div><!-- This is deal portion -->  <div class="col-sm-10"> <!-- This is to show title and Code and share a deal button-->    <div class="row">      <div class="col-sm-8 deal-title"> <button type="button" class="btn-xs btn-success">verified</button>' .        '<h3><a href="#">'. $deal["deal_title"] .'</a></h3>      </div>      <div class="col-sm-2 deal-coupon">        <span class="deal-coupon-code">' . $deal["deal_coupon"] . '</span>      </div>    </div>    <!-- This is to show description --> <div class="row"><div class="col-sm-8">' . '<a href="' . $deal["deal_url"] . '">' . $deal["deal_url"] . '</a>' . '</div></div>   <div class="row">      <div class="col-sm-8 deal-description">' .       $deal["deal_description"]    . '</div>    </div><br><br>    <div class="row">      <div class="col-md-8"> <div id="comments-container"> </div></div>  </div>       </div>    </div>  </div></div><hr>';
                     
             }
     
