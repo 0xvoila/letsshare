@@ -32,7 +32,7 @@
 	    echo "Thank you for contribution. You deal is submitted for verification";
 	    $last_id = $conn->insert_id;
 	    
-	    $makeSearchable = array(array('db_id' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url));
+	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'comments' => []));
 		$index->addObjects($makeSearchable,true);
 
 	} else {
