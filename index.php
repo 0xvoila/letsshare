@@ -10,7 +10,7 @@
             );
             $index->setSettings(
                 [
-                    'attributesToRetrieve' => ['deal_title','deal_description','deal_support_search']
+                    'attributesToRetrieve' => ['*']
                 ]
             );
         

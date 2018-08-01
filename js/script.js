@@ -94,11 +94,13 @@ $( document ).ready(function() {
                             }
                         
                         
-		  				htmlTemplate = htmlTemplate + '<!-- A row is a deal --><div id=' + records[i].objectID + ' class="row deal" ><!-- This is  pic of the poster -->  <div class="col-sm-2 deal-poster-image">      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRErG00hM7WDheP9FCZvZTIWGurbuKLDCAoHAmKKemK2s6vsLjA" width="100%" height="100%">  </div><!-- This is deal portion -->  <div class="col-sm-10"> <!-- This is to show title and Code and share a deal button-->    <div class="row">      <div class="col-sm-8 deal-title"><button type="button" class="btn-xs btn-success">verified</button>' +        '<h3><a href="#">'+ records[i].deal_title +'</a></h3>      </div>      <div class="col-sm-2 deal-coupon">        <span class="deal-coupon-code">' + records[i].deal_coupon + '</span>      </div>    </div>    <!-- This is to show description --> <div class="row"><div class="col-sm-8">' + '<a href="' + records[i].deal_url + '">' + records[i].deal_url + '</a>' + '</div></div>   <div class="row">      <div class="col-sm-8 deal-description">' +        records[i].deal_description    + '</div>    </div><br><br>    <div class="row">      <div class="col-md-8"> <div id="comments-container"> </div></div>  </div>       </div>    </div>  </div></div><hr>';
+		  				htmlTemplate = htmlTemplate + '<!-- A row is a deal --><div id=' + records[i].objectID + ' class="row deal" ><!-- This is  pic of the poster -->  <div class="col-sm-2 deal-poster-image">      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRErG00hM7WDheP9FCZvZTIWGurbuKLDCAoHAmKKemK2s6vsLjA" width="100%" height="100%">  </div><!-- This is deal portion -->  <div class="col-sm-10"> <!-- This is to show title and Code and share a deal button-->    <div class="row">      <div class="col-sm-8 deal-title"><button type="button" class="btn-xs btn-success">verified</button>' +        '<h3><a href="#">'+ records[i].deal_title +'</a></h3>      </div>      <div class="col-sm-2 deal-coupon">        <span class="deal-coupon-code">' + records[i].deal_coupon + '</span>      </div>    </div>    <!-- This is to show description --> <div class="row"><div class="col-sm-8">' + '<a href="' + records[i].deal_url + '">' + records[i].deal_url + '</a>' + '</div></div>   <div class="row">      <div class="col-sm-8 deal-description">' +        records[i].deal_description    + '</div>    </div><br><br>    <div class="row">      <div class="col-md-8"> <div id="comments-container"> </div></div>  </div>       </div>    </div><hr>';
 		  			};
 
 		  			$("#deal-container").html(htmlTemplate);
-                    loadDealComments();
+                    $('.deal').each(function() {
+                        loadDealComments(this);
+                    });
 		  		}
 
 		  		else {
