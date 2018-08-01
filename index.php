@@ -34,7 +34,7 @@
             $query = $_GET['q'];
             $query = preg_replace('/-/', ' ', $query);
             $results = $index->search($query);
-            if (empty($results['hits'])){
+            if (empty($results['hits']) || !$query){
                 echo '<meta name=description content= "Deals | Offers | Coupon | Best | Active" />';
             } 
             else {
