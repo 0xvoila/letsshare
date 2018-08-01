@@ -86,8 +86,8 @@
     </div>
       <div class="col-sm-6">
         <div>
-          <h1 style="text-align:center">Community of Offers & Discount</h1>
-          <h6 style="text-align:center">Stop wasting your time on expired deals - join the community now</h6>
+          <h1 style="text-align:center">Community of Offers & Discounts</h1>
+          <h2 style="text-align:center">Real Deals by Real People </h2>
         </div>
       </div>
   </div>
