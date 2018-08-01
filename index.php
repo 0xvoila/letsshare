@@ -94,6 +94,7 @@
 <!--Here deal will come from javascript-->
 <?php 
             $query = $_GET['q'];
+            $query = preg_replace('/-/', ' ', $query);
             $results = $index->search($query);
             $htmlTemplate = '<br>';
             $count = 0;
