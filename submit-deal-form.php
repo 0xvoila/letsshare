@@ -32,7 +32,7 @@
 	    echo 'Thank you for contribution. You deal is submitted for verification . Click on <a href="http://dealsbycommunity.com">Back to website</a>';
 	    $last_id = $conn->insert_id;
 	    
-	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'comments' => []));
+	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'comments' => []));
 		$index->addObjects($makeSearchable,true);
 
 	} else {

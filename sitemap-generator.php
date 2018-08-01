@@ -28,7 +28,8 @@
     $urlCounter = 0;
     foreach ($deals as $deal) {
         foreach($deal['deal_support_search'] as $key => $dealLocation){
-            $dealsSiteMap[$urlCounter]['url'] = $url_prefix . htmlspecialchars($slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $dealLocation))));
+            
+            $dealsSiteMap[$urlCounter]['url'] = $url_prefix . htmlspecialchars(strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', trim($dealLocation)))));
             $urlCounter = $urlCounter + 1;     
         }
     }
