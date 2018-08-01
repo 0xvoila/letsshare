@@ -38,6 +38,10 @@ $( document ).ready(function() {
     function loadDealComments (deal){
         element = '#' + deal.id + ' ' + '#' + 'comment-container';
         $('#' + deal.id + ' ' + '#' + 'comments-container').comments({
+            enableEditing: false,
+            enableUpvoting: false,
+            enableDeleting: false,
+            postCommentOnEnter: true,
             profilePictureURL: 'http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png',
             getComments: function(success, error) {
                 $.ajax({
