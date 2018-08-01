@@ -29,7 +29,7 @@
 	$sql = "INSERT INTO deals (deal_title, deal_description, deal_coupon,deal_url,is_approved) VALUES" . "('".$deal_title . "'," . "'" . $deal_description . "'," . "'" . $deal_coupon . "'," . "'" . $deal_url . "'," . "'" . 'N' . "');";
 
 	if ($conn->query($sql) === TRUE) {
-	    echo "Thank you for contribution. You deal is submitted for verification";
+	    echo 'Thank you for contribution. You deal is submitted for verification . Click on <a href="http://dealsbycommunity.com">Back to website</a>';
 	    $last_id = $conn->insert_id;
 	    
 	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'comments' => []));
