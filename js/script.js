@@ -9,7 +9,7 @@ $( document ).ready(function() {
         loadDealComments(this);
     });
     
-
+    
 	$('#deal-search-box-submit-btn').click(function(){
 		searchDeal($('#deal-search-box').val());
 	})
@@ -64,6 +64,7 @@ $( document ).ready(function() {
     
 	function searchDeal (query){
 		
+        amplitude.getInstance().logEvent("deal-search",{"deal-search-query": query});
 		var dealLoader = '<br><br><div class="loader"></div>';
 		$("#deal-container").html(dealLoader);
 
