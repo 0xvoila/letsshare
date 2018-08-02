@@ -4,16 +4,7 @@ $( document ).ready(function() {
     
     var client = algoliasearch('WEQ1ZSOQ0G', '7b0cab452409affbc3e9cdd8dd6260e1');
 	var index = client.initIndex('deal_search');
-	index.setSettings({
-	  	searchableAttributes: ['deal_title,deal_description',
-                              'deal_url','deal_support_search','comments']
-	});
-
-	index.setSettings({
-	  attributesToRetrieve: ['*']
-	});
-    
-    
+	
     $('.deal').each(function() {
         loadDealComments(this);
     });

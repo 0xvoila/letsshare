@@ -3,23 +3,28 @@
 <?php       require_once('algoliasearch.php');
             $client = new \AlgoliaSearch\Client('WEQ1ZSOQ0G', '385f901dcaf5f9c89672ba880f4b5eab');
             $index = $client->initIndex('deal_search');
-            $index->setSettings(
-                [
-                    'searchableAttributes' => ['deal_title','deal_description','deal_support_search']
-                ]
-            );
-            $index->setSettings(
-                [
-                    'attributesToRetrieve' => ['*']
-                ]
-            );
-        
+            
 ?>
 <html lang="en">
 <head>
+
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123290881-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-123290881-1');
+    </script>
+    
  <?php 
     $query = $_GET['q'];
+     
     $query = preg_replace('/-/', ' ', $query);
+    $query = str_replace(' ', '',$query);
+    $query = str_replace('-', '',$query);
+    $results = $index->search($query);
     if (!$query){
         echo '<title>Deals & Discount Community</title>';      
     }
@@ -31,9 +36,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <?php 
             $metaDescription = "";
-            $query = $_GET['q'];
-            $query = preg_replace('/-/', ' ', $query);
-            $results = $index->search($query);
             if (empty($results['hits']) || !$query){
                 echo '<meta name=description content= "Deals | Offers | Coupon | Best | Active" />';
             } 

@@ -1,4 +1,16 @@
 <html>
+<head>
+
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123290881-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-123290881-1');
+    </script>
+</head>
 <body>
 
 <?php
@@ -32,7 +44,7 @@
 	    echo 'Thank you for contribution. You deal is submitted for verification . Click on <a href="http://dealsbycommunity.com">Back to website</a>';
 	    $last_id = $conn->insert_id;
 	    
-	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'comments' => []));
+	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'comments' => [], 'deal_status' => 'active', 'tags'=>[]));
 		$index->addObjects($makeSearchable,true);
 
 	} else {
