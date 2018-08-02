@@ -87,7 +87,7 @@
       <div class="col-sm-6">
         <div>
           <h1 style="text-align:center">Community of Offers & Discounts</h1>
-          <h2 style="text-align:center">Real Deals by Real People </h2>
+          <h2 style="text-align:center">Real Discounts by Real People </h2>
         </div>
       </div>
   </div>
