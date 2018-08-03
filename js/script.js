@@ -1,7 +1,6 @@
 
 $( document ).ready(function() {
     console.log( "ready!" );
-    
     var client = algoliasearch('WEQ1ZSOQ0G', '7b0cab452409affbc3e9cdd8dd6260e1');
 	var index = client.initIndex('deal_search');
 	
@@ -34,7 +33,6 @@ $( document ).ready(function() {
             enableUpvoting: false,
             enableDeleting: false,
             postCommentOnEnter: true,
-            profilePictureURL: 'http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png',
             getComments: function(success, error) {
                 $.ajax({
                     type: 'get',
@@ -47,6 +45,9 @@ $( document ).ready(function() {
                 });
             },
              postComment: function(commentJSON, success, error) {
+                 commentJSON.fullname = $.cookie("displayName");
+                 commentJSON.profile_picture_url = $.cookie("profilePicURL");
+                 commentJSON.created_by_current_user = false;
                  requestData = {"comments": {"_operation": "Add","value": commentJSON }};
                 $.ajax({
                     type: 'post',

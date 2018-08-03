@@ -7,7 +7,8 @@
 ?>
 <html lang="en">
 <head>
-
+    
+    
      <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123290881-1"></script>
     <script>
@@ -113,6 +114,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/jquery-comments.css">
@@ -209,6 +211,10 @@
         </div>
         <div class="modal-body">
           <form role="form">
+           <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span>Display Name</label>
+              <input type="text" class="form-control" id="display-name" placeholder="Enter display Name">
+            </div>
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span>Email Id</label>
               <input type="text" class="form-control" id="email" placeholder="Enter email">
@@ -217,7 +223,7 @@
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
               <input type="password" class="form-control" id="password" placeholder="Enter password">
             </div>
-            <button type="submit" id="login-btn" class="btn btn-default btn-success btn-block">Press Enter</button>
+            <button type="submit" id="login-btn" class="btn btn-default btn-success btn-block">Join Community</button>
           </form>
         </div>
       </div>

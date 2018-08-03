@@ -1,7 +1,6 @@
 
-
-
 firebase.auth().onAuthStateChanged(function(user) {
+    
  // user is undefined if no user signed in
  if(!user){
         $("#myModal").modal("show");
@@ -19,19 +18,30 @@ $('#login-btn').on('click', function(e) {
       e.stopPropagation();
       var email = $('#email').val();
       var password = $('#password').val();
+      var displayName = $("#display-name").val(); 
+      var photoURL = "http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png";
       var credential = firebase.auth.EmailAuthProvider.credential(email, password);
       var auth = firebase.auth();
       auth.signInAndRetrieveDataWithCredential(credential).then(function(user){
-          console.log('current user is ' + user);
           $("#myModal").modal("hide");
-          
+          console.log('current user is ' + user);
       }).catch(function(error){
           // Create a new user 
           auth.createUserWithEmailAndPassword(email,password).then(function(user){
-            console.log("this is new user  " + user);
             $("#myModal").modal("hide");
+            currentUser = firebase.auth().currentUser;
+            currentUser.updateProfile({
+                displayName : displayName,
+                photoURL : photoURL
+            }).then(function(user){
+                currentUser = firebase.auth().currentUser;
+                $.cookie("displayName", currentUser.displayName);
+                $.cookie("profilePicURL", currentUser.photoURL);
+            }).catch(function(error){
+                console.log("Error in error " + error);
+            });
           }).catch(function(error){
-              
+            console.log(error);  
           });
       });
       
