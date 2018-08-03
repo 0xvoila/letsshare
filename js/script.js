@@ -9,6 +9,7 @@ $( document ).ready(function() {
         loadDealComments(this);
     });
     
+
     
 	$('#deal-search-box-submit-btn').click(function(){
 		searchDeal($('#deal-search-box').val());

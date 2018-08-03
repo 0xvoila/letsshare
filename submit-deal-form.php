@@ -47,6 +47,22 @@
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDjaD26UkYqXbuTvdjuRqrjI9vd9JlnueI",
+        authDomain: "fir-store-9c275.firebaseapp.com",
+        databaseURL: "https://fir-store-9c275.firebaseio.com",
+        projectId: "fir-store-9c275",
+        storageBucket: "fir-store-9c275.appspot.com",
+        messagingSenderId: "359256095334"
+      };
+      firebase.initializeApp(config);
+    </script>
     
 </head>
 <body>
@@ -94,4 +110,6 @@
 ?>
 
 </body>
+<script src="/js/authentication.js"></script>
+
 </html>
