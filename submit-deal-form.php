@@ -91,6 +91,8 @@
 	$deal_title = $_POST['deal-title'];
 	$deal_description = $_POST['deal-description'];
     $deal_url = $_POST['deal-url'];
+    $time = time();
+    $submitDate = date("Y-m-d",$time);
     
 	$sql = "INSERT INTO deals (deal_title, deal_description, deal_coupon,deal_url,is_approved) VALUES" . "('".$deal_title . "'," . "'" . $deal_description . "'," . "'" . $deal_coupon . "'," . "'" . $deal_url . "'," . "'" . 'N' . "');";
 
@@ -98,7 +100,8 @@
 	    echo 'Thank you for contribution. You deal is submitted for verification . Click on <a href="http://dealsbycommunity.com">Back to website</a>';
 	    $last_id = $conn->insert_id;
 	    
-	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'comments' => [], 'deal_status' => 'active', 'tags'=>[]));
+	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'comments' => [], 'deal_status' => 'active', 'deal_approved' => 'Y' ,'tags'=>[], 'deal_submit_on'=> $submitDate, 'deal_updated_on' => $submitDate , 'deal_used_on' => $submitDate));
+        
 		$index->addObjects($makeSearchable,true);
 
 	} else {

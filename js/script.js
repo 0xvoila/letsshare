@@ -34,6 +34,7 @@ $( document ).ready(function() {
             enableDeleting: false,
             postCommentOnEnter: true,
             getComments: function(success, error) {
+                profilePictureURL: 'http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png',
                 $.ajax({
                     type: 'get',
                     headers: {"X-Algolia-API-Key": "7b0cab452409affbc3e9cdd8dd6260e1", "X-Algolia-Application-Id" :"WEQ1ZSOQ0G" },
