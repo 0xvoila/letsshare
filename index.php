@@ -207,24 +207,15 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> Login</h4>
+          <h4 style="color:red;">Enter to Community</h4>
         </div>
         <div class="modal-body">
-          <form role="form">
-           <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span>Display Name</label>
-              <input type="text" class="form-control" id="display-name" placeholder="Enter display Name">
+           <div>
+              <button id="login-facebook-btn" class="loginBtn loginBtn--facebook">Login with Facebook</button>
             </div>
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span>Email Id</label>
-              <input type="text" class="form-control" id="email" placeholder="Enter email">
+            <div>
+              <button id="login-google-btn" class="loginBtn loginBtn--google">Login with Google</button>
             </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Enter password">
-            </div>
-            <button type="submit" id="login-btn" class="btn btn-default btn-success btn-block">Join Community</button>
-          </form>
         </div>
       </div>
     </div>
