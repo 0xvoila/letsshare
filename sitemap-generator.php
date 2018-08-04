@@ -16,7 +16,7 @@
             );
 
 // configuration
-  $url_prefix = 'http://dealsbycommunity.com/deals/';
+  $url_prefix = 'http://dealsbycommunity.com/deal/';
   $blog_timezone = 'UTC';
   $timezone_offset = '+00:00';
   $W3C_datetime_format_php = 'Y-m-d\Th:i:s'; // See http://www.w3.org/TR/NOTE-datetime
@@ -27,9 +27,10 @@
     $deals = $results['hits'];
     $urlCounter = 0;
     foreach ($deals as $deal) {
+        $dealId = $deal['objectID'];
         foreach($deal['deal_support_search'] as $key => $dealLocation){
             
-            $dealsSiteMap[$urlCounter]['url'] = $url_prefix . htmlspecialchars(strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', trim($dealLocation)))));
+            $dealsSiteMap[$urlCounter]['url'] = $url_prefix . $dealId."/".htmlspecialchars(strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', trim($dealLocation)))));
             $urlCounter = $urlCounter + 1;     
         }
     }

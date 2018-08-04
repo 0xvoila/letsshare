@@ -78,7 +78,7 @@
     $query = $_GET['q'];
      
     $query = preg_replace('/-/', ' ', $query);
-    $query = str_replace(' ', '',$query);
+    $query = trim($query);
     $query = str_replace('-', '',$query);
     $results = $index->search($query);
     if (!$query){

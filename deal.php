@@ -78,8 +78,7 @@
     $dealId = $_GET['deal_id'];
     $dealSlug = $_GET['deal_slug'];
     $dealTitle = preg_replace('/-/', ' ', $dealSlug);
-    $dealTitle = str_replace(' ', '',$dealSlug);
-    $dealTitle = str_replace('-', '',$dealSlug);
+    $dealTitle = trim($dealTitle);
     
     $deal = $index->getObject($dealId);
     if (!$dealTitle){
