@@ -99,8 +99,9 @@
 	if ($conn->query($sql) === TRUE) {
 	    echo 'Thank you for contribution. You deal is submitted for verification . Click on <a href="http://dealsbycommunity.com">Back to website</a>';
 	    $last_id = $conn->insert_id;
-	    
-	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'comments' => [], 'deal_status' => 'active', 'deal_approved' => 'Y' ,'tags'=>[], 'deal_submit_on'=> $submitDate, 'deal_updated_on' => $submitDate , 'deal_used_on' => $submitDate));
+	    $deal_slug =  htmlspecialchars(strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', trim($deal_title)))));
+            
+	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'deal_slug' => $deal_slug,'comments' => [], 'deal_status' => 'active', 'deal_approved' => 'Y' ,'tags'=>[], 'deal_submit_on'=> $submitDate, 'deal_updated_on' => $submitDate , 'deal_used_on' => $submitDate));
         
 		$index->addObjects($makeSearchable,true);
 

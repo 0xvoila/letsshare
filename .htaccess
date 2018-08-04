@@ -1,2 +1,3 @@
 RewriteEngine on
 RewriteRule ^deals/(.*)$ /index.php?q=$1 [L,QSA]
+RewriteRule ^deal/(.*)/(.*)$ /deal.php?deal_id=$1&deal_slug=$2 [L,QSA]
