@@ -13,7 +13,25 @@ $( document ).ready(function() {
 	$('#deal-search-box-submit-btn').click(function(){
 		searchDeal($('#deal-search-box').val());
 	})
-	
+	$("#share").jsSocials({
+      
+      // An array of share networking services
+      shares: ["whatsapp", "facebook"],
+      url: $("#share").attr("deal-url"),
+      text: $("#share").attr("deal-title"),
+      showLabel: true,
+      showCount: true,
+      on: {
+        click: function(e) {
+            if(this.share === "whatsapp") {
+                console.log("tweet \"" + this.url + "\" at " + e.timeStamp);
+            }
+        }
+    }    
+
+});
+
+    
 	$('#deal-search-box').keyup(function(event){
 		var keycode = (event.keyCode ? event.keyCode : event.which);
     	if(keycode == '13'){
