@@ -13,23 +13,31 @@ $( document ).ready(function() {
 	$('#deal-search-box-submit-btn').click(function(){
 		searchDeal($('#deal-search-box').val());
 	})
-	$("#share").jsSocials({
-      
-      // An array of share networking services
-      shares: ["whatsapp", "facebook"],
-      url: $("#share").attr("deal-url"),
-      text: $("#share").attr("deal-title"),
-      showLabel: true,
-      showCount: true,
-      on: {
-        click: function(e) {
-            if(this.share === "whatsapp") {
-                console.log("tweet \"" + this.url + "\" at " + e.timeStamp);
-            }
-        }
-    }    
+    
+    $('.share').each(function() {
+        attachShareOptionsThisDeal(this);
+    });
+    
+    function attachShareOptionsThisDeal(elem){
+        
+        	$(elem).jsSocials({   
+                  // An array of share networking services
+                  shares: ["whatsapp", "facebook"],
+                  url: $(elem).attr("deal-url"),
+                  text: $(elem).attr("deal-title"),
+                  showLabel: true,
+                  showCount: false,
+                  on: {
+                    click: function(e) {
+                        if(this.share === "whatsapp") {
+                            console.log("tweet \"" + this.url + "\" at " + e.timeStamp);
+                        }
+                    }
+                }    
 
-});
+        });
+    }
+
 
     
 	$('#deal-search-box').keyup(function(event){
@@ -110,13 +118,17 @@ $( document ).ready(function() {
                         
                             }
                         
+                        var dealURL = 'http://dealsbycommunity.com/deal/' + records[i].objectID + '/' + records[i].deal_slug;
                         
-		  				htmlTemplate = htmlTemplate + '<!-- A row is a deal --><div id=' + records[i].objectID + ' class="row deal" ><!-- This is  pic of the poster -->  <div class="col-sm-2 deal-poster-image">      <img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" width="100%" height="100%">  </div><!-- This is deal portion -->  <div class="col-sm-10"> <!-- This is to show title and Code and share a deal button-->    <div class="row">      <div class="col-sm-8 deal-title"><button type="button" class="btn-xs btn-success">verified</button>' +        '<h3><a href="/deal/'+ records[i].objectID + "/" + records[i].deal_slug + '">'+ records[i].deal_title +'</a></h3>      </div>      <div class="col-sm-2 deal-coupon">        <span class="deal-coupon-code">' + records[i].deal_coupon + '</span>      </div>    </div>    <!-- This is to show description --> <div class="row"><div class="col-sm-8">' + '<a href="' + records[i].deal_url + '">' + records[i].deal_url + '</a>' + '</div></div>   <div class="row">      <div class="col-sm-8 deal-description">' +        records[i].deal_description    + '</div>    </div><br><br>    <div class="row">      <div class="col-md-8"> <div id="comments-container"> </div></div>  </div>       </div>    </div><hr>';
+		  				htmlTemplate = htmlTemplate + '<!-- A row is a deal --><div id=' + records[i].objectID + ' class="row deal" ><!-- This is  pic of the poster -->  <div class="col-sm-2 deal-poster-image">      <img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" width="100%" height="100%">  </div><!-- This is deal portion -->  <div class="col-sm-10"> <!-- This is to show title and Code and share a deal button-->    <div class="row">      <div class="col-sm-8 deal-title"><button type="button" class="btn-xs btn-success">verified</button>' +        '<h3><a href="'+ dealURL +'">'+ records[i].deal_title +'</a></h3>      </div>      <div class="col-sm-2 deal-coupon">        <span class="deal-coupon-code">' + records[i].deal_coupon + '</span>      </div>    </div>    <!-- This is to show description --> <div class="row"><div class="col-sm-8">' + '<a href="' + records[i].deal_url + '">' + records[i].deal_url + '</a>' + '</div></div>   <div class="row">      <div class="col-sm-8 deal-description">' +        records[i].deal_description    + '</div>    </div> <div class="row"><div class="share"  deal-title="' + records[i]["deal_title"] + '" deal-url="' + dealURL +'" class="col-sm-4"></div></div><br><br>    <div class="row">      <div class="col-md-8"> <div id="comments-container"> </div></div>  </div>       </div>    </div><hr>';
 		  			};
 
 		  			$("#deal-container").html(htmlTemplate);
                     $('.deal').each(function() {
                         loadDealComments(this);
+                    });
+                    $('.share').each(function() {
+                        attachShareOptionsThisDeal(this);
                     });
 		  		}
 

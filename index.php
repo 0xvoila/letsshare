@@ -101,8 +101,8 @@
                 }
             }
         
-            $metaDescription = str_replace(' ', '',$metaDescription);
-            $metaDescription = str_replace('|', '',$metaDescription);
+            $metaDescription = trim($metaDescription,'|');
+            $metaDescription = trim($metaDescription,' ');
             
             echo '<meta name="description" content="'. $metaDescription .'"/>';   
    ?>
@@ -119,9 +119,9 @@
   <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/jquery-comments.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="jssocial/dist/jssocials.css">
+  <link rel="stylesheet" href="/jssocial/dist/jssocials.css">
   <link rel="stylesheet" href="jssocial/dist/jssocials-theme-flat.css">
-  <script src="jssocial/dist/jssocials.js"></script>  
+  <script src="/jssocial/dist/jssocials.js"></script>  
   <script type="text/javascript" src="/js/jquery-comments.js"></script>
 </head>
 <body>
@@ -192,7 +192,9 @@
                             echo '<br>';
                             $count = $count + 1;
                         }
-                        echo '<!-- A row is a deal --><div id=' . $deal["objectID"] .' class="row deal" ><!-- This is  pic of the poster -->  <div class="col-sm-2 deal-poster-image">      <img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" width="100%" height="100%">  </div><!-- This is deal portion -->  <div class="col-sm-10"> <!-- This is to show title and Code and share a deal button-->    <div class="row">      <div class="col-sm-8 deal-title"> <button type="button" class="btn-xs btn-success">verified</button>' .        '<h3><a href="/deal/'. $deal["objectID"] ."/" . $deal['deal_slug'] .  '" target="_blank">'. $deal["deal_title"] .'</a></h3>      </div>      <div class="col-sm-2 deal-coupon">        <span class="deal-coupon-code">' . $deal["deal_coupon"] . '</span>      </div>    </div>    <!-- This is to show description --> <div class="row"><div class="col-sm-8">' . '<a href="' . $deal["deal_url"] . '">' . $deal["deal_url"] . '</a>' . '</div></div>   <div class="row">      <div class="col-sm-8 deal-description">' .       $deal["deal_description"]    . '</div>    </div><div class="row"><div id="share" deal-title="' . $deal["deal_title"] .'" deal-url="/deal/' . $deal["objectID"] . '/' . $deal["deal_slug"] .'" class="col-sm-4"></div></div><br><br>    <div class="row">      <div class="col-md-8"> <div id="comments-container"> </div></div>  </div>       </div>    </div><hr>';
+                        $dealURL =  'http://dealsbycommunity.com/deal/' . $deal["objectID"] . '/' . $deal["deal_slug"];
+                
+                        echo '<!-- A row is a deal --><div id=' . $deal["objectID"] .' class="row deal" ><!-- This is  pic of the poster -->  <div class="col-sm-2 deal-poster-image">      <img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" width="100%" height="100%">  </div><!-- This is deal portion -->  <div class="col-sm-10"> <!-- This is to show title and Code and share a deal button-->    <div class="row">      <div class="col-sm-8 deal-title"> <button type="button" class="btn-xs btn-success">verified</button>' .        '<h3><a href="' . $dealURL .  '" target="_blank">'. $deal["deal_title"] .'</a></h3>      </div>      <div class="col-sm-2 deal-coupon">        <span class="deal-coupon-code">' . $deal["deal_coupon"] . '</span>      </div>    </div>    <!-- This is to show description --> <div class="row"><div class="col-sm-8">' . '<a href="' . $deal["deal_url"] . '">' . $deal["deal_url"] . '</a>' . '</div></div>   <div class="row">      <div class="col-sm-8 deal-description">' .       $deal["deal_description"]    . '</div>    </div><div class="row"><div class="share" deal-title="' . $deal["deal_title"] .'" deal-url="' . $dealURL .'" class="col-sm-4"></div></div><br><br>    <div class="row">      <div class="col-md-8"> <div id="comments-container"> </div></div>  </div>       </div>    </div><hr>';
                     
             }
     

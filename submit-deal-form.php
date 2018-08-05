@@ -87,10 +87,10 @@
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$deal_coupon = $_POST['deal-coupon'];
-	$deal_title = $_POST['deal-title'];
-	$deal_description = $_POST['deal-description'];
-    $deal_url = $_POST['deal-url'];
+	$deal_coupon = mysqli_real_escape_string($conn, $_POST['deal-coupon']);
+	$deal_title = mysqli_real_escape_string($conn,$_POST['deal-title']);
+	$deal_description = mysqli_real_escape_string($conn,$_POST['deal-description']);
+    $deal_url = mysqli_real_escape_string($conn,$_POST['deal-url']);
     $time = time();
     $submitDate = date("Y-m-d",$time);
     

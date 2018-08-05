@@ -23,8 +23,8 @@
   $null_sitemap = '<urlset><url><loc></loc></url></urlset>';
   $lastmod = date("Y-m-d\Th:m:s+00:00");
     $dealsSiteMap = [];   
-    $results = $index->search('*');
-    $deals = $results['hits'];
+    $results = $index->browse('');
+    $deals = $results;
     $urlCounter = 0;
     foreach ($deals as $deal) {
         $dealId = $deal['objectID'];
