@@ -91,6 +91,13 @@
 	$deal_title = mysqli_real_escape_string($conn,$_POST['deal-title']);
 	$deal_description = mysqli_real_escape_string($conn,$_POST['deal-description']);
     $deal_url = mysqli_real_escape_string($conn,$_POST['deal-url']);
+    
+    $ch = curl_init("https://fir-store-9c275.appspot.com/?url=" + $deal_url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $dealImageURL = curl_exec($ch);
+    curl_close($ch);
+    
     $time = time();
     $submitDate = date("Y-m-d",$time);
     
@@ -101,7 +108,7 @@
 	    $last_id = $conn->insert_id;
 	    $deal_slug =  htmlspecialchars(strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', trim($deal_title)))));
             
-	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'deal_slug' => $deal_slug,'comments' => [], 'deal_status' => 'active', 'deal_approved' => 'Y' ,'tags'=>[], 'deal_submitted_on'=> $submitDate, 'deal_updated_on' => $submitDate , 'deal_used_on' => $submitDate));
+	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'deal_slug' => $deal_slug,'comments' => [], 'deal_status' => 'active', 'deal_approved' => 'Y' ,'tags'=>[], 'deal_image_url' => $dealImageURL,'deal_submitted_on'=> $submitDate, 'deal_updated_on' => $submitDate , 'deal_used_on' => $submitDate));
         
 		$index->addObjects($makeSearchable,true);
 
