@@ -24,9 +24,9 @@ $('#login-google-btn').on('click', function(e) {
       return firebase.auth().signInWithPopup(provider).then(function(){
           $("#myModal").modal("hide");  
             currentUser = firebase.auth().currentUser;
-            $.cookie("email", currentUser.email);
-            $.cookie("displayName", currentUser.displayName);
-            $.cookie("profilePicURL", currentUser.photoURL);
+            $.cookie("email", currentUser.email,{expires: new Date(2022, 10, 29, 11, 00, 00));
+            $.cookie("displayName", currentUser.displayName,{expires: new Date(2022, 10, 29, 11, 00, 00));
+            $.cookie("profilePicURL", currentUser.photoURL,{expires: new Date(2022, 10, 29, 11, 00, 00));
           
       }).catch(function(error){
           console.log("Error in signIn with google");
