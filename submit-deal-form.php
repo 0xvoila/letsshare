@@ -92,7 +92,7 @@
 	$deal_description = mysqli_real_escape_string($conn,$_POST['deal-description']);
     $deal_url = mysqli_real_escape_string($conn,$_POST['deal-url']);
     
-    $ch = curl_init("https://fir-store-9c275.appspot.com/?url=" + $deal_url);
+    $ch = curl_init("https://fir-store-9c275.appspot.com/?url=" . $deal_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     $dealImageURL = curl_exec($ch);

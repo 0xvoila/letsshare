@@ -44,6 +44,7 @@ function getImage() {
 async function run() {
   const browser = await puppeteer.launch()
   const page = await browser.newPage();
+  await page.setViewport({ width: 1366, height: 768});
   await page.goto(link);
 
   const title = await page.evaluate(getTitle);
