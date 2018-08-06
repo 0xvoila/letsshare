@@ -1,6 +1,32 @@
 <?php
   header('Content-type: application/xml');
-    
+  public function slugify($text)
+  {
+      // replace non letter or digits by -
+      $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+
+      // transliterate
+      $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+      // remove unwanted characters
+      $text = preg_replace('~[^-\w]+~', '', $text);
+
+      // trim
+      $text = trim($text, '-');
+
+      // remove duplicate -
+      $text = preg_replace('~-+~', '-', $text);
+
+      // lowercase
+      $text = strtolower($text);
+
+      if (empty($text)) {
+        return 'n-a';
+      }
+
+     return $text;
+}
+
     require_once('algoliasearch.php');
             $client = new \AlgoliaSearch\Client('WEQ1ZSOQ0G', '385f901dcaf5f9c89672ba880f4b5eab');
             $index = $client->initIndex('deal_search');
@@ -30,7 +56,7 @@
         $dealId = $deal['objectID'];
         foreach($deal['deal_support_search'] as $key => $dealLocation){
             
-            $dealsSiteMap[$urlCounter]['url'] = $url_prefix . $dealId."/".htmlspecialchars(strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', trim($dealLocation)))));
+            $dealsSiteMap[$urlCounter]['url'] = $url_prefix . $dealId."/".htmlspecialchars(strtolower(trim(slugify($dealLocation))));
             $urlCounter = $urlCounter + 1;     
         }
     }
