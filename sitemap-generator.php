@@ -1,6 +1,7 @@
 <?php
   header('Content-type: application/xml');
-  public function slugify($text)
+  
+ function slugify($text)
   {
       // replace non letter or digits by -
       $text = preg_replace('~[^\pL\d]+~u', '-', $text);
