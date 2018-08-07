@@ -80,7 +80,9 @@
     $dealTitle = preg_replace('/-/', ' ', $dealSlug);
     $dealTitle = trim($dealTitle);
     
+    
     $deal = $index->getObject($dealId);
+    $dealImageURL = $deal["deal_image_url"];
     if (!$dealTitle){
         echo '<title>Deals & Discount Community</title>';      
     }
@@ -104,6 +106,15 @@
             
             echo '<meta name="description" content="'. $metaDescription .'"/>';   
    ?>
+   
+   <?php
+    
+    echo '<meta property="og:url"                content="'. $dealImageURL . '"/>'
+    echo '<meta property="og:type"               content="Discount | Offer | Deal"/>'
+    echo '<meta property="og:title"              content="' . $dealTitle '"/>'
+    echo '<meta property="og:image"              content="' . $dealImageURL. '" />'
+        
+    ?>
 
   <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"> 
   <meta name="robots" content="noodp, noydir">

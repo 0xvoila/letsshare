@@ -107,6 +107,15 @@
             echo '<meta name="description" content="'. $metaDescription .'"/>';   
    ?>
 
+  <?php 
+    
+    <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+    <meta property="og:type"               content="discount | Offer" />
+    <meta property="og:title"              content="Discounts & Offer Community" />
+    <meta property="og:description"        content="Find deals & discounts that actually works" />
+    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+        
+   ?>
   <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"> 
   <meta name="robots" content="noodp, noydir">
   
