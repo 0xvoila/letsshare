@@ -107,15 +107,12 @@
             echo '<meta name="description" content="'. $metaDescription .'"/>';   
    ?>
 
-  <?php 
     
-    <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+    <meta property="og:url"                content="https://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
     <meta property="og:type"               content="discount | Offer" />
     <meta property="og:title"              content="Discounts & Offer Community" />
     <meta property="og:description"        content="Find deals & discounts that actually works" />
-    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
-        
-   ?>
+    <meta property="og:image"              content="https://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
   <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"> 
   <meta name="robots" content="noodp, noydir">
   
@@ -129,7 +126,7 @@
   <link rel="stylesheet" type="text/css" href="/css/jquery-comments.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/jssocial/dist/jssocials.css">
-  <link rel="stylesheet" href="jssocial/dist/jssocials-theme-flat.css">
+  <link rel="stylesheet" href="/jssocial/dist/jssocials-theme-flat.css">
   <script src="/jssocial/dist/jssocials.js"></script>  
   <script type="text/javascript" src="/js/jquery-comments.js"></script>
 </head>
@@ -201,7 +198,7 @@
                             echo '<br>';
                             $count = $count + 1;
                         }
-                        $dealURL =  'http://dealsbycommunity.com/deal/' . $deal["objectID"] . '/' . $deal["deal_slug"];
+                        $dealURL =  'https://dealsbycommunity.com/deal/' . $deal["objectID"] . '/' . $deal["deal_slug"];
                 
                         echo '<!-- A row is a deal --><div id=' . $deal["objectID"] .' class="row deal" ><!-- This is  pic of the poster -->  <div class="col-sm-2 deal-poster-image">      <img src="http://wfarm2.dataknet.com/static/resources/icons/set108/b5cdab07.png" width="100%" height="100%">  </div><!-- This is deal portion -->  <div class="col-sm-10"> <!-- This is to show title and Code and share a deal button-->    <div class="row">      <div class="col-sm-8 deal-title"> <button type="button" class="btn-xs btn-success">verified</button>' .        '<h3><a href="' . $dealURL .  '" target="_blank">'. $deal["deal_title"] .'</a></h3>      </div>      <div class="col-sm-2 deal-coupon">        <span class="deal-coupon-code">' . $deal["deal_coupon"] . '</span>      </div>    </div>    <!-- This is to show description --> <div class="row"><div class="col-sm-8">' . '<a href="' . $deal["deal_url"] . '" target="_blank">' . $deal["deal_url"] . '</a>' . '</div></div><div class="row"><div class="col-sm-8"><img src="'. $deal["deal_image_url"].'" class="img-responsive deal-image"></div></div>   <div class="row">      <div class="col-sm-8 deal-description">' .       $deal["deal_description"]    . '</div>    </div><div class="row"><div class="share" deal-title="' . $deal["deal_title"] .'" deal-url="' . $dealURL .'" class="col-sm-4"></div></div><br><br>    <div class="row">      <div class="col-md-8"> <div id="comments-container"> </div></div>  </div>       </div>    </div><hr>';
                     

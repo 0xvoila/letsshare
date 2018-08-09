@@ -74,12 +74,17 @@
 	$client = new \AlgoliaSearch\Client('WEQ1ZSOQ0G', '385f901dcaf5f9c89672ba880f4b5eab');
 
 	$index = $client->initIndex('deal_search');
-	$servername = "localhost";
-	$username = "root";
-	$password = "root";
-	$dbname = "letshare";
+	// $servername = "localhost";
+	// $username = "root";
+	// $password = "root";
+	// $dbname = "letshare";
 
 	// Create connection
+  $servername = getenv('MYSQL_IP');
+  $username = getenv('MYSQL_USER');
+  $password = getenv('MYSQL_PASSWORD');
+  $dbname = getenv('MYSQL_DBNAME');
+
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
 	if ($conn->connect_error) {
@@ -92,7 +97,7 @@
 	$deal_description = mysqli_real_escape_string($conn,$_POST['deal-description']);
     $deal_url = mysqli_real_escape_string($conn,$_POST['deal-url']);
     
-    $ch = curl_init("https://fir-store-9c275.appspot.com/?url=" . $deal_url);
+    $ch = curl_init("https://latest-browser-screenshots-dot-fir-store-9c275.appspot.com/?url=" . $deal_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     $dealImageURL = curl_exec($ch);
@@ -104,7 +109,7 @@
 	$sql = "INSERT INTO deals (deal_title, deal_description, deal_coupon,deal_url,is_approved) VALUES" . "('".$deal_title . "'," . "'" . $deal_description . "'," . "'" . $deal_coupon . "'," . "'" . $deal_url . "'," . "'" . 'N' . "');";
 
 	if ($conn->query($sql) === TRUE) {
-	    echo 'Thank you for contribution. You deal is submitted for verification . Click on <a href="http://dealsbycommunity.com">Back to website</a>';
+	    echo 'Thank you for contribution. You deal is submitted for verification . Click on <a href="https://dealsbycommunity.com">Back to website</a>';
 	    $last_id = $conn->insert_id;
 	    $deal_slug =  htmlspecialchars(strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', trim($deal_title)))));
             

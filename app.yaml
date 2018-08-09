@@ -1,0 +1,15 @@
+runtime: php
+api_version: 1
+env: flex
+
+runtime_config:
+  document_root: web
+  front_controller_file: mod_rewrite.php
+
+env_variables:
+  # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
+  # values obtained when configuring your Cloud SQL instance.
+  MYSQL_IP: 35.202.97.67
+  MYSQL_USER: root
+  MYSQL_PASSWORD: 2June1989!
+  MYSQL_DBNAME: community

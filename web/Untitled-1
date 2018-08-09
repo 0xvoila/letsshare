@@ -1,0 +1,11 @@
+
+    require_once('algoliasearch.php');
+	$client = new \AlgoliaSearch\Client('WEQ1ZSOQ0G', '385f901dcaf5f9c89672ba880f4b5eab');
+	$index = $client->initIndex('deal_search');
+    
+    $ch = curl_init("https://fir-store-9c275.appspot.com/?url=" . $deal_url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    $dealImageURL = curl_exec($ch);
+    curl_close($ch);
+    
