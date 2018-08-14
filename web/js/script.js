@@ -11,13 +11,33 @@ $( document ).ready(function() {
 
     
 	$('#deal-search-box-submit-btn').click(function(){
-		searchDeal($('#deal-search-box').val());
+        page = 0;
+		searchDeal($('#deal-search-box').val(),page);
 	})
     
     $('.share').each(function() {
         attachShareOptionsThisDeal(this);
     });
     
+    function loadPagination(elem, query , nbPages){
+        console.log("loading for " + query + ' pages ' + nbPages);
+        var html = '<h2>Explore More Deals</h2><ul class="pagination">';
+            if(!query){
+                query='';
+            }
+            for(var i=1;i<nbPages ;i++){
+                console.log("I am here");
+                pageCount = i;
+                html = html + '<li><a href="http://dealsbycommunity.com?q=' + query  +  '&page=' . pageCount +'">' +  i +'</a></li>' ;
+            }
+                html = html + '</ul>';
+
+            console.log(html);
+            elem.html(html);
+    }
+
+
+
     function attachShareOptionsThisDeal(elem){
         
         	$(elem).jsSocials({   
@@ -44,11 +64,11 @@ $( document ).ready(function() {
 		var keycode = (event.keyCode ? event.keyCode : event.which);
     	if(keycode == '13'){
     		$(this).blur();
-        	searchDeal($('#deal-search-box').val());
+        	searchDeal($('#deal-search-box').val(),0);
     	}
 
     	if($('#deal-search-box').val() == ''){
-    		searchDeal('*');	
+    		searchDeal('*',0);	
     	}
 	});
 
@@ -91,7 +111,7 @@ $( document ).ready(function() {
     }
     
     
-	function searchDeal (query){
+	function searchDeal (query,page){
 		
         amplitude.getInstance().logEvent("deal-search",{"deal-search-query": query});
 		var dealLoader = '<br><br><div class="loader"></div>';
@@ -99,11 +119,14 @@ $( document ).ready(function() {
 
 		setTimeout(function(){
 			index.search({
-		  		query: query
+		  		query: query,
+                page : page,
+                hitsPerPage:6
 		  	},
 		  	function searchDone(err, content) {
 
 		  		var records = content.hits;
+                var nbPages = content.nbPages;
 		  		var htmlTemplate = '<br>';
 		  		if (records.length > 0){
 
@@ -130,11 +153,14 @@ $( document ).ready(function() {
                     $('.share').each(function() {
                         attachShareOptionsThisDeal(this);
                     });
+
+                    loadPagination($('#deal-pagination-bar'),query, nbPages);
 		  		}
 
 		  		else {
 		  			var htmlTemplate = '<br> No Deals Found Matching the Search Criteria';
 		  			$("#deal-container").html(htmlTemplate);	
+                    loadPagination($('#deal-pagination-bar'),query, nbPages);
 		  		}
 		  		
 		  		}

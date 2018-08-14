@@ -75,12 +75,29 @@
     </script>
 
  <?php 
-    $query = $_GET['q'];
-     
+
+    if(isset($_GET['q]'])){
+      $query = $_GET['q'];
+    }
+
+    else {
+      $query = '';
+    }
+
+    if(isset($_GET['page'])){
+      $page = $_GET['page'];
+    }
+
+    else {
+      $page = 0;
+    }
+
     $query = preg_replace('/-/', ' ', $query);
     $query = trim($query);
     $query = str_replace('-', '',$query);
-    $results = $index->search($query);
+    $results = $index->search($query,array('page' =>$page,'hitsPerPage' => 6));
+    $nbPages = $results['nbPages'];
+    
     if (!$query){
         echo '<title>Deals & Discount Community</title>';      
     }
@@ -140,6 +157,9 @@
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="/submit-deal-form.html">Submit a Deal</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="active"><button id="login-google-btn" class="loginBtn loginBtn--google">Join with Google</button></li>
       </ul>
     </div>  
   </nav>
@@ -207,42 +227,22 @@
         ?>
 </div>
 
-<div class="container">
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content"> 
-          <div class="row modal-header">
-              <div class="col-sm-6">
-                  Enter the Community 
-              </div>
-          </div>
-          <br>
-<!--
-          <div class="row">
-              <div class="col-sm-3">
-              </div>
-            <div class="col-sm-6">
-                <button id="login-facebook-btn" class="loginBtn loginBtn--facebook">Login with Facebook</button>
-              </div>
-          </div>
-
-          <hr>
--->
-          <div class="row">
-              <div class="col-sm-3">
-          
-              </div>
-              <div class="col-sm-6">
-                  <button id="login-google-btn" class="loginBtn loginBtn--google">Login with Google</button>
-              </div>
-          </div>
-          <br>
-         </div>    
-    </div>
-  </div> 
+<div id="deal-pagination-bar" class="container">
+  <h2>Explore More Deals</h2>
+  <ul class="pagination">
+    <?php
+    
+    for ($i=1;$i<=$results["nbPages"];$i++){
+      $pageCount = $i;
+      if(!$query){
+        $query='';
+      }
+      echo '<li><a href="http://dealsbycommunity.com?q='. $query . '&page=' . $pageCount .'">' .  $i .'</a></li>' ;
+    }
+    
+    
+    ?>
+  </ul>
 </div>
 
 </body>

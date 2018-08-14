@@ -1,15 +1,18 @@
 runtime: php
 env: flex
 
-service: standard
-
 runtime_config:
   document_root: web
   front_controller_file: mod_rewrite.php
 
-# handlers:
-# - url: /.*
-#   script: mod_rewrite.php
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 2
+
+resources:
+  cpu: 1
+  memory_gb: 1
+  disk_size_gb: 10
 
 env_variables:
   # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the

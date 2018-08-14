@@ -103,21 +103,30 @@
     $dealImageURL = curl_exec($ch);
     curl_close($ch);
     
-    $time = time();
-    $submitDate = date("Y-m-d",$time);
+    date_default_timezone_set('Asia/Kolkata');
+    $submitDate = time();
     
 	$sql = "INSERT INTO deals (deal_title, deal_description, deal_coupon,deal_url,is_approved) VALUES" . "('".$deal_title . "'," . "'" . $deal_description . "'," . "'" . $deal_coupon . "'," . "'" . $deal_url . "'," . "'" . 'N' . "');";
 
 	if ($conn->query($sql) === TRUE) {
 	    echo 'Thank you for contribution. You deal is submitted for verification . Click on <a href="https://dealsbycommunity.com">Back to website</a>';
-	    $last_id = $conn->insert_id;
-	    $deal_slug =  htmlspecialchars(strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', trim($deal_title)))));
-            
-	    $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'deal_slug' => $deal_slug,'comments' => [], 'deal_status' => 'active', 'deal_approved' => 'Y' ,'tags'=>[], 'deal_image_url' => $dealImageURL,'deal_submitted_on'=> $submitDate, 'deal_updated_on' => $submitDate , 'deal_used_on' => $submitDate));
-        
-		$index->addObjects($makeSearchable,true);
+
+      try{
+          
+          $last_id = $conn->insert_id;
+          $deal_slug =  htmlspecialchars(strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', trim($deal_title)))));  
+          $makeSearchable = array(array('objectID' => $last_id,'deal_coupon' => $deal_coupon,'deal_description' => $deal_description, 'deal_title' => $deal_title , 'deal_url' =>$deal_url,'deal_support_search'=>[$deal_title],'deal_slug' => $deal_slug,'comments' => [], 'deal_status' => 'active', 'deal_approved' => 'Y' ,'tags'=>[], 'deal_image_url' => $dealImageURL,'deal_submitted_on'=> $submitDate, 'deal_updated_on' => $submitDate , 'deal_used_on' => $submitDate));
+          $index->addObjects($makeSearchable,true);  
+      }
+	    
+      catch(Exception $e){
+
+        syslog(LOG_CRIT, $e);
+        syslog(LOG_CRIT,$e->getMessage());
+      }
 
 	} else {
+      syslog(LOG_CRIT, "Unable to connect to the deals database");
 	    echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 
